@@ -1,5 +1,7 @@
 # CTF-Writeups
 
+# My Simple Cipher
+
 # Overview of the challenge
 
 The challenge involved an encryption program which performed the following encryption to genereate the cipher text:
