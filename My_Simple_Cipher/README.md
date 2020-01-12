@@ -1,10 +1,11 @@
 # My Simple Cipher
 
-## Overview of the challenge
+## Overview Of The Challenge
 
 The challenge involved an encryption program which performed the following encryption to genereate the cipher text:
 
-```**for i in range(0, len(message)):
+```python
+**for i in range(0, len(message)):
   encrypted += chr((ord(message[i]) ^ ord(key[i % len(key)]) ^ ord(encrypted[i]))%128)**
 ```
 
@@ -12,7 +13,7 @@ The challenge involved an encryption program which performed the following encry
 
 The goal was to find the flag from a message which consisted essentially three parts
 - The **flag** 
-- A predefined character > **'|'**
+- A predefined character > **|**
 - And a **key**
 ctfFlag{Vishvesh_S_Rao}
 An output of the encryption program was given which when hex decoded gave a ciphertext of length 36.
