@@ -15,7 +15,7 @@ The goal was to find the flag from a message which consisted essentially three p
 - The **flag** 
 - A predefined character ```|```
 - And a **key**
-ctfFlag{Vishvesh_S_Rao}
+
 An output of the encryption program was given which when hex decoded gave a ciphertext of length 36.
 Consequently I found out the Length of the flag part by subtracting ciphertext length from key lentgth plus 2 (taking into account the predefined chracter 
 ```|```.
