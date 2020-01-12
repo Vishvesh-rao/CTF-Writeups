@@ -52,7 +52,7 @@ one is not so important as such as we will see soon.(*as to get the answer we on
 
 What the else condition does is adds two modified parts of plaintext.
 The first part `inp[:flag_size - excess_len]` creates a string in which the flag is present but depending on the excess length that many characters are replaced from the end (*i.e from right to left*) by the user input.
-The second part `inp[flag_size:]` is just taking the user input present after the flag string and is added to the first part.
+The second part `inp[flag_size:]` is just taking the user input present after the flag string and adding it to the first part.
 
 so just think if the user input is such that the excess length is **flag_size-1** then the cipher text will start with the first character of flag follwed by 47 user input characters (lets take that to be *a*) so we get *ciphertext* = `first_chr_of_flag+'a'*47` .
 
@@ -61,7 +61,7 @@ then yup its nothing other than the famous ***ECB byte at a time attack!!!!*** a
 
 Here we implement the attack from the first character of the ciphertext by setting the initial excess length to **flag_size-1** and then we iterate in a loop and on each iteration excess length is reduced by one therby exposing one extra character of the flag each time.
 
-AND VOILLA YUO GET THE FLAG: `ctfFlag{Vishvesh_S_Rao}`
+AND VOILLA YOU GET THE FLAG: `ctfFlag{Vishvesh_S_Rao}`
 
 in this case it is my own flag that i had to set as i couldnt `nc` to get the actul flag file :)
 
