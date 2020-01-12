@@ -62,7 +62,8 @@ then yup its nothing other than the famous ***ECB byte at a time attack!!!!*** a
 Here we implement the attack from the first character of the ciphertext by setting the initial excess length to **flag_size-1** and then we iterate in a loop and on each iteration excess length is reduced by one therby exposing one extra character of the flag each time.
 
 AND VOILLA YUO GET THE FLAG: `ctfFlag{Vishvesh_S_Rao}`
-in this case it is my own flag that i had to set as i couldnt `nc` to get the actul flag file
+
+in this case it is my own flag that i had to set as i couldnt `nc` to get the actul flag file :)
 
 
 
