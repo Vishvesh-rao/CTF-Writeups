@@ -1,1 +1,0 @@
-ctfFlag{Vishvesh_S_Rao}
