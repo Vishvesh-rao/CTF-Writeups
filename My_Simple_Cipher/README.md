@@ -4,8 +4,9 @@
 
 The challenge involved an encryption program which performed the following encryption to genereate the cipher text:
 
-**for i in range(0, len(message)):
+```**for i in range(0, len(message)):
   encrypted += chr((ord(message[i]) ^ ord(key[i % len(key)]) ^ ord(encrypted[i]))%128)**
+```
 
 ***encrypted*** is the ciphertext and a random ascii character was added to it before the encryption loop.
 
