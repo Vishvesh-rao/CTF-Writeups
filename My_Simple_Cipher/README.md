@@ -1,6 +1,6 @@
 # My Simple Cipher
 
-## Overview Of The Challenge
+### Overview Of The Challenge
 
 The challenge involved an encryption program which performed the following encryption to genereate the cipher text:
 
@@ -21,7 +21,7 @@ Consequently I found out the Length of the flag part by subtracting ciphertext l
 ```|```.
 and the randomly generated ascii character) 
 
-## The Approach
+### The Approach
 
 Since in the encryption equation there are two unknowns it seems impossible to find the key and hence the flag.
 The idea here is that the program already gives us a character in the message namel the predefined character 
