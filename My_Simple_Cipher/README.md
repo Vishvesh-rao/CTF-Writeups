@@ -13,7 +13,7 @@ for i in range(0, len(message)):
 
 The goal was to find the flag from a message which consisted essentially three parts
 - The **flag** 
-- A predefined character >```|```
+- A predefined character ```|```
 - And a **key**
 ctfFlag{Vishvesh_S_Rao}
 An output of the encryption program was given which when hex decoded gave a ciphertext of length 36.
@@ -48,7 +48,7 @@ in the third loop instruction so that when the loop iterates the next time the v
 
 Now with only one unknown finding the complete ***message*** is childs play (just solve the encryption equation with **message[i]** as the unknown)
 
-In the end we get the key as: ***ENJ0YHOLIDAY!***
+In the end we get the key as: `ENJ0YHOLIDAY!`
 
-Flag as: `**TWCTF{Crypto-is-fun!}**`
+Flag as: `TWCTF{Crypto-is-fun!}`
 
