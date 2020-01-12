@@ -6,7 +6,7 @@ On the first glance itself you briefly get an idea that encryption program is an
 Declared inside the class AESCipher we can observe the two functions which are the core part of the challenge i.e the `mod_encrypt` and the `mod_pad` functions.
 furthermore we observe that the user can input some values.
 
-Also notice that after the flag file is read certain conditions are being checked:\
+Also notice that after the flag file is read certain conditions are being checked:
 - Flag size should be less than 48.
 - user can input 6400 times.
 - user input should not be greater than 100.
@@ -63,7 +63,7 @@ Here we implement the attack from the first character of the ciphertext by setti
 
 AND VOILLA YOU GET THE FLAG: `ctfFlag{Vishvesh_S_Rao}`
 
-in this case it is my own flag that i had to set as i couldnt `nc` to get the actul flag file :)
+in this case it is my own flag that i had to set as i couldnt `nc` to get the actull flag file :)
 
 
 
