@@ -63,7 +63,7 @@ Here we implement the attack from the first character of the ciphertext by setti
 
 AND VOILLA YOU GET THE FLAG: `ctfFlag{Vishvesh_S_Rao}`
 
-in this case it is my own flag that i had to set as i couldnt `nc` to get the actull flag file :)
+in this case it is my own flag that i had to set as i couldnt `nc` to get the actual flag file :)
 
 
 
