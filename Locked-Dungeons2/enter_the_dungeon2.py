@@ -1,6 +1,6 @@
 #!/usr/bin/env python2.7
 
-from hashlib import sha256, md5
+from hashlib import sha256,md5
 from Crypto.Cipher import AES
 import os
 import random
