@@ -92,9 +92,11 @@ so if flag power 14 is too big how about reducing the power............
 
 Now lets take only q1 as the modulus. The idea here is that if q1 is less than `p*q1` we may be able to retrieve the flag
 so here's what we do:
+
 -> c_modq = c_flag mod q1  (c_flag referenced as c1 in challenge script)
 
 this makes some changes which we will see
+
 -> c_flag = `flag`<sup>e1</sup>`mod p*q1`
 
 -> c_modq = (`flag`<sup>e1</sup>`mod p*q1`)`mod q1`
