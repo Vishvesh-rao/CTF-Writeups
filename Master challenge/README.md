@@ -11,7 +11,6 @@ Lets list them out in the order we'll be finding them in:
 1. Prime factors of ***n***(*mentioned as **n12** in the data file*):
    1. ```q1p```
    1. ```q1q```
-
 1. The ```hint``` 
 1. The ```flag```
 
