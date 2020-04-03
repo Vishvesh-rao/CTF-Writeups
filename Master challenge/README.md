@@ -75,13 +75,13 @@ Now we find the private exponent d.
  
 *NOTE: **we are finding this for e/14***
 
-now decrypting with this d what we get is `flag`<sup>e2*d</sup>`mod p*q1`
+now decrypting with this d what we get is `flag`<sup>e1*d</sup>`mod p*q1`
 
 But since this d was the modular inverse of (e1/14) and not e1 what we are left with is:
 
 -> `flag`<sup>14*(e1/14)*d</sup>`mod p*q1`
 
--> `flag`<sup>14</sup>`mod p*q2` as `(e2/14)*d`==1
+-> `flag`<sup>14</sup>`mod p*q1` as `(e2/14)*d`==1
 
 Now if take the 14th root of flag we should end up with the pliantext
 Doing that we get flag and then we convert it to bytes and what we get is.... well its gibberish!! Meaning flag<sup>14</sup>
