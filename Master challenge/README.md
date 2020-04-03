@@ -73,7 +73,7 @@ get the same result.
 Moment I saw this my first reaction was _dividing_ `e2` ( or `e1`) by 14, this gives us a GCD of 1. good! 
 Now we find the private exponent d. 
  
-NOTE:**we are finding this for e/14**
+*NOTE: **we are finding this for e/14***
 
 now decrypting with this d what we get is `flag`<sup>e2*d</sup>`mod p*q1`
 
@@ -111,6 +111,7 @@ since `q1<p*q1` we can ommit `mod p*q1`
 
 -> `c_modq`<sup>d</sup> = `flag`<sup>2*(e2/2)*d</sup>`mod q1`
 now assuming flag<sup>2</sup><q1 we can get `flag` by taking root
+
 
 > For all this we haven't taken into consideration `q2` as it is not greater than `flag`<sup>2</sup>
 hence will not yield the flag when we attempt to take square root
