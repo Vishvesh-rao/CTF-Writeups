@@ -45,7 +45,7 @@ At first glance it looks like we can retrive ```e2+tmp``` easily since the expon
 By thinking of small exponent attack we are on the right idea but the wrong path since this attack which is not working for ```ee2``` actually works for ```ee1```=42. A direct implementation gets us the value of ```e1```.
  
 Going back to ```e2```; since ```e2+tmp``` is really big there is no way we can directly bruteforce tha value of ```e2``` but
-but again we are on the right idea but wrong way of implementation as in, instead of bruteforcing for the value directly we   bruteforce to find the actul value of the ciphertext i.e the unmoded value which would be this ```ce2+k*n11``` by iterting for different values of **```k```** and matching this with ```(e2+tmp)```<sup>3</sup> we canget ```e2```. Following is the implementation of the idea: 
+again we are on the right idea but wrong way of implementation as in, instead of bruteforcing for the value directly we   bruteforce to find the actul value of the ciphertext i.e the unmoded value which would be this ```ce2+k*n11``` by iterting for different values of **```k```** and matching this with ```(e2+tmp)```<sup>3</sup> we canget ```e2```. Following is the implementation of the idea: 
  ```python
  for k in range(100000):
 	val = root(ce2+k*n11,3)
@@ -118,7 +118,7 @@ now assuming flag<sup>2</sup><q1 we can get `flag` by taking root
 > For all this we haven't taken into consideration `q2` as it is not greater than `flag`<sup>2</sup>
 hence will not yield the flag when we attempt to take square root
 
-this is the exploit for the idea:
+this is the exploit script for the idea:
 ```python
 q1 = q1p
 c1_modq = c_flag % q1
@@ -127,7 +127,7 @@ d1 = invert(e1/GCD1,q1-1)
 c1_modq = pow(c1_modq,d1,q1)
 flag = root(c1_modq,2)[0]
 ```
-In the we get decrypted flag as: **`de1ctf{9b10a98b-71bb-4bdf-a6ff-f319943de21f}`**
+In the end we get decrypted flag as: **`de1ctf{9b10a98b-71bb-4bdf-a6ff-f319943de21f}`**
 
 Here is the complete [exploit](https://github.com/Vishvesh-rao/CTF-Writeups/blob/master/Master%20challenge/exploit.py)
 
