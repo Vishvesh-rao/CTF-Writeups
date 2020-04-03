@@ -1,6 +1,6 @@
 # Master Challenge
 ## Overview 
-This was one of the most interesting RSA challenges that I have solve till date. There are numerous points about this challenge that it make it so intriguing and unusual one of them being the hint (I will come to that later :p)  
+This was one of the most interesting RSA challenges that I have solve till date. There are numerous points about this challenge that makes it so intriguing and unusual one of them being the hint (I will come to that later :p)  
 One thing you would have noticed is how it seems that most of variables which have been used in the challenge script are not even acessible to the solver.
 
 You would also notice that there are multiple ciphertexts, modlus, public exponents declared (some which we dont even know the value of). 
