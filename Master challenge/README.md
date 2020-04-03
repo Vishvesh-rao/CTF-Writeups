@@ -63,7 +63,7 @@ Since **n** is too long for normal factorization we use [fermats method](https:/
 Thereafter finding hint is just elementry RSA operation.
 The hint as it turns out to be: 
 **```orz...you.found.me.but.sorry.no.hint...keep.on.and.enjoy.it!```**
-is pretty useless :), still we got the factors with which we proceed to the last and final stage............
+is pretty useless :) , still we got the factors with which we proceed to the last and final stage............
 
 ### #4 Retrieving the **```flag```**
 This is arguably the most difficult value to retrieve amongst all and with good reason.
@@ -72,7 +72,9 @@ get the same result.
 
 Moment I saw this my first reaction was _dividing_ `e2` ( or `e1`) by 14, this gives us a GCD of 1. good! 
 Now we find the private exponent d. 
- NOTE:**we are finding this for e/14**
+ 
+NOTE:**we are finding this for e/14**
+
 now decrypting with this d what we get is `flag`<sup>e2*d</sup>`mod p*q2`
 
 But since this d was the modular inverse of (e2/14) and not e2 what we are left with is:
