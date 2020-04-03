@@ -75,10 +75,12 @@ Now we find the private exponent d.
  NOTE:**we are finding this for e/14**
 now decrypting with this d what we get is `flag`<sup>e2*d</sup>`mod p*q2`
 
-But since this d was the modular inverse of (e2/14) and not e2 what we are left with is
+But since this d was the modular inverse of (e2/14) and not e2 what we are left with is:
+
 -> `flag`<sup>14*(e2/14)*d</sup>`mod p*q2`
 
 -> `flag`<sup>14</sup>`mod p*q2` as `(e2/14)*d`==1
+
 Now if take the 14th root of flag we should end up with the pliantext
 Doing that we get flag and then we convert it to bytes and what we get is.... well its gibberish!! Meaning flag<sup>14</sup>
 is bigger than `p*q2`
@@ -101,6 +103,7 @@ Now `gcd(e2,(q2-1))`=2
 so again we divide e2/2 and find `inverse(e2/2,(q2-1))` and we get d ( for e2/2 )
 
 -> `c_modq`<sup>d</sup> = (`flag`<sup>2*(e2/2)*d</sup>`mod q2`)`mod p*q2`
+
 Hence we get (`flag`<sup>2</sup>`mod q2`)`mod p*q2`
 since `q2<p*q2` we can ommit `mod p*q2`
 
