@@ -30,5 +30,5 @@ def CRT_attack(n1,n2,n3,n4,c1,c2,c3,c4,e):
 	y4 = invert(x4,n4)
 
 	encrypt_mesg = ((c1*x1*y1 + c2*x2*y2 + c3*x3*y3 + c4*x4*y4)%N)
-
+	
 	return root(encrypt_mesg,4)[0]
