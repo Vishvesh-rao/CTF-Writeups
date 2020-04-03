@@ -41,7 +41,7 @@ ee2 = 3
 assert(pow(e1,ee1,n)==ce1)
 assert(pow(e2+tmp,ee2,n)==ce2)
 ```
-At first glance it looks like we can retrive ```e2+tmp``` easily since the exponent ```ee2```=3 but after implementation we see that ```e2+tmp``` is pretty big and is not susceptible to small exponent attack.
+At first glance it looks like we can retrive ```e2+tmp``` easily since the exponent ```ee2```=3 is small but after implementation we see that ```e2+tmp``` is pretty big and is not susceptible to [small exponent attack](https://bitsdeep.com/posts/attacking-rsa-for-fun-and-ctf-points-part-2/).
 By thinking of small exponent attack we are on the right idea but the wrong path since this attack which is not working for ```ee2``` actually works for ```ee1```=42. A direct implementation gets us the value of ```e1```.
  
 Going back to ```e2```; since ```e2+tmp``` is really big there is no way we can directly bruteforce tha value of ```e2``` but
@@ -75,42 +75,45 @@ Now we find the private exponent d.
  
 NOTE:**we are finding this for e/14**
 
-now decrypting with this d what we get is `flag`<sup>e2*d</sup>`mod p*q2`
+now decrypting with this d what we get is `flag`<sup>e2*d</sup>`mod p*q1`
 
-But since this d was the modular inverse of (e2/14) and not e2 what we are left with is:
+But since this d was the modular inverse of (e1/14) and not e1 what we are left with is:
 
--> `flag`<sup>14*(e2/14)*d</sup>`mod p*q2`
+-> `flag`<sup>14*(e1/14)*d</sup>`mod p*q1`
 
 -> `flag`<sup>14</sup>`mod p*q2` as `(e2/14)*d`==1
 
 Now if take the 14th root of flag we should end up with the pliantext
 Doing that we get flag and then we convert it to bytes and what we get is.... well its gibberish!! Meaning flag<sup>14</sup>
-is bigger than `p*q2`
+is bigger than `p*q1`
 
 That means thats not the right way of doing ( again we are on the right idea but wrong track :D )
 so if flag power 14 is too big how about reducing the power............
 
-Now lets take only q2 as the modulus. The idea here is that if q2 is less than `p*q2` we may be able to retrieve the flag
+Now lets take only q1 as the modulus. The idea here is that if q1 is less than `p*q1` we may be able to retrieve the flag
 so here's what we do:
--> c_modq = c_flag mod q2  (c_flag referenced as c1 in challenge script)
+-> c_modq = c_flag mod q1  (c_flag referenced as c1 in challenge script)
 
 this makes some changes which we will see
--> c_flag = `flag`<sup>e2</sup>`mod p*q2`
+-> c_flag = `flag`<sup>e1</sup>`mod p*q1`
 
--> c_modq = (`flag`<sup>e2</sup>`mod p*q2`)`mod q2`
+-> c_modq = (`flag`<sup>e1</sup>`mod p*q1`)`mod q1`
 
--> c_modq = (`flag`<sup>e2</sup>`mod q2`)`mod p*q2`
+-> c_modq = (`flag`<sup>e1</sup>`mod q1`)`mod p*q1`
 
 Now `gcd(e2,(q2-1))`=2
 so again we divide e2/2 and find `inverse(e2/2,(q2-1))` and we get d ( for e2/2 )
 
 -> `c_modq`<sup>d</sup> = (`flag`<sup>2*(e2/2)*d</sup>`mod q2`)`mod p*q2`
 
-Hence we get (`flag`<sup>2</sup>`mod q2`)`mod p*q2`
-since `q2<p*q2` we can ommit `mod p*q2`
+Hence we get (`flag`<sup>2</sup>`mod q1`)`mod p*q1`
+since `q1<p*q1` we can ommit `mod p*q1`
 
--> `c_modq`<sup>d</sup> = `flag`<sup>2*(e2/2)*d</sup>`mod q2`
-now assuming flag<sup>2</sup><q2 we can get `flag` by taking root
+-> `c_modq`<sup>d</sup> = `flag`<sup>2*(e2/2)*d</sup>`mod q1`
+now assuming flag<sup>2</sup><q1 we can get `flag` by taking root
+
+> For all this we haven't taken into consideration `q2` as it is not greater than `flag`<sup>2</sup>
+hence will not yield the flag when we attempt to take square root
 
 this is the exploit for the idea:
 ```python
